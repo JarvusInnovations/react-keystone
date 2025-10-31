@@ -64,6 +64,21 @@ export interface KeystoneCardProps {
   linkIcon?: boolean;
 
   /**
+   * Makes the card clickable with hover state
+   */
+  clickable?: boolean;
+
+  /**
+   * Shows selected state with visual feedback
+   */
+  selected?: boolean;
+
+  /**
+   * Click handler for interactive cards
+   */
+  onClick?: () => void;
+
+  /**
    * Additional CSS classes
    */
   className?: string;
@@ -101,15 +116,44 @@ export const KeystoneCard = ({
   linkText,
   linkHref,
   linkIcon = true,
+  clickable = false,
+  selected = false,
+  onClick,
   className = ''
 }: KeystoneCardProps) => {
   // Build card classes
-  const cardClasses = ['kds-card', className].filter(Boolean).join(' ');
+  const cardClasses = [
+    'kds-card',
+    clickable && 'kds-card-clickable',
+    selected && 'kds-card-selected',
+    className
+  ].filter(Boolean).join(' ');
 
   const hasHeader = tag || date;
 
+  const handleClick = () => {
+    if (clickable && onClick) {
+      onClick();
+    }
+  };
+
+  const cardProps = {
+    className: cardClasses,
+    ...(clickable && {
+      role: 'button',
+      tabIndex: 0,
+      onClick: handleClick,
+      onKeyDown: (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick();
+        }
+      }
+    })
+  };
+
   return (
-    <div className={cardClasses}>
+    <div {...cardProps}>
       {imageUrl && (
         <img className="kds-card-img-top" src={imageUrl} alt={imageAlt} />
       )}

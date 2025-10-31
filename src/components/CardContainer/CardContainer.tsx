@@ -13,6 +13,26 @@ export interface KeystoneCardContainerProps {
   padding?: string;
 
   /**
+   * Makes the container clickable with hover state
+   */
+  interactive?: boolean;
+
+  /**
+   * Shows selected state with visual feedback
+   */
+  selected?: boolean;
+
+  /**
+   * Click handler for interactive containers
+   */
+  onClick?: () => void;
+
+  /**
+   * Border accent color on the left side
+   */
+  borderAccent?: 'primary' | 'success' | 'warning' | 'error';
+
+  /**
    * Additional CSS classes for the card wrapper
    */
   className?: string;
@@ -46,14 +66,46 @@ export interface KeystoneCardContainerProps {
 export const KeystoneCardContainer = ({
   children,
   padding = '',
+  interactive = false,
+  selected = false,
+  onClick,
+  borderAccent,
   className = '',
   bodyClassName = ''
 }: KeystoneCardContainerProps) => {
-  const cardClasses = ['kds-card', className].filter(Boolean).join(' ');
+  const cardClasses = [
+    'kds-card',
+    interactive && 'kds-card-container-clickable',
+    selected && 'kds-card-container-selected',
+    borderAccent && `kds-card-container-accent-${borderAccent}`,
+    className
+  ].filter(Boolean).join(' ');
+
   const bodyClasses = ['kds-card-body', padding, bodyClassName].filter(Boolean).join(' ');
 
+  const handleClick = () => {
+    if (interactive && onClick) {
+      onClick();
+    }
+  };
+
+  const cardProps = {
+    className: cardClasses,
+    ...(interactive && {
+      role: 'button',
+      tabIndex: 0,
+      onClick: handleClick,
+      onKeyDown: (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick();
+        }
+      }
+    })
+  };
+
   return (
-    <div className={cardClasses}>
+    <div {...cardProps}>
       <div className={bodyClasses}>
         {children}
       </div>
