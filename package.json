@@ -1,14 +1,35 @@
 {
   "name": "react-keystone",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "React components for the Pennsylvania Keystone Design System",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "components",
+    "keystone",
+    "pennsylvania",
+    "design-system",
+    "kds"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
   "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
