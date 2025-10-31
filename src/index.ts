@@ -3,8 +3,11 @@
 
 export { version } from './version';
 
-// Components will be exported here as they are implemented
-// export { Button } from './components/Button';
+// Components
+export { KeystoneButton } from './components/Button';
+export type { KeystoneButtonProps } from './components/Button';
+
+// Additional components will be exported here as they are implemented
 // export { Alert } from './components/Alert';
 // export { Card } from './components/Card';
 // etc.
