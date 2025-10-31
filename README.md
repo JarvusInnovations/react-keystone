@@ -1,10 +1,29 @@
 # react-keystone
 
-React components for the Pennsylvania Keystone Design System (KDS)
+A comprehensive React component library implementing the Pennsylvania Keystone Design System (KDS), providing accessible, reusable components that follow Commonwealth of Pennsylvania design standards.
 
-## Overview
+## About
 
-This package provides React component wrappers for all components in the Pennsylvania Keystone Design System, making it easy to build accessible, consistent interfaces that follow Commonwealth of Pennsylvania design standards.
+react-keystone provides React developers with production-ready components that match the official Pennsylvania Keystone Design System exactly. Built with TypeScript for full type safety, this library ensures your applications maintain visual and behavioral consistency with PA.gov standards.
+
+## Key Features
+
+- 🎨 **Exact KDS Implementation** - Pixel-perfect React components matching PA.gov design patterns
+- 🔒 **TypeScript First** - Full type definitions for enhanced developer experience
+- ♿ **Accessible by Default** - WCAG 2.1 AA compliant components
+- 📦 **Tree-Shakeable** - ESM and CommonJS builds for optimal bundle sizes
+- 🚀 **Zero Runtime Dependencies** - Only React as peer dependency
+- 🎯 **Framework Agnostic Styling** - Works with existing KDS CSS (no style conflicts)
+- 📖 **Comprehensive Documentation** - Clear examples and API documentation
+
+## Components
+
+20+ components systematically extracted and implemented from the official KDS Storybook, including:
+- Form elements (buttons, inputs, selects, checkboxes, radios)
+- Navigation (navbar, breadcrumbs, menus)
+- Feedback (alerts, modals, toasts)
+- Layout (containers, cards, tables)
+- Typography and more
 
 ## Installation
 
@@ -12,42 +31,52 @@ This package provides React component wrappers for all components in the Pennsyl
 npm install react-keystone
 ```
 
+## Prerequisites
+
+- React 18.0 or higher
+- Pennsylvania KDS CSS v2.0.1 or compatible
+
 ## Usage
 
 ```tsx
-import { Button, Alert, Card } from 'react-keystone';
+import { KeystoneButton } from 'react-keystone';
 
 function App() {
   return (
     <div>
-      <Alert variant="info" title="Welcome">
-        Get started with KDS components
-      </Alert>
-      <Button variant="filled" onClick={() => console.log('Clicked!')}>
-        Click Me
-      </Button>
+      <KeystoneButton variant="filled" onClick={() => console.log('Clicked!')}>
+        Submit
+      </KeystoneButton>
+
+      <KeystoneButton variant="outlined" icon>
+        Next Step
+      </KeystoneButton>
+
+      <KeystoneButton link href="/home">
+        Go Home
+      </KeystoneButton>
     </div>
   );
 }
 ```
 
-## Features
+## Status
 
-- ✅ Full TypeScript support
-- ✅ Tree-shakeable ESM and CommonJS builds
-- ✅ Follows KDS design patterns exactly
-- ✅ Comprehensive prop types matching KDS specifications
-- ✅ Accessible components with ARIA support
-- ✅ Zero runtime dependencies (React peer dependency only)
+🚧 **Active Development** - Currently implementing all KDS components with regular updates.
 
-## Requirements
+### Implemented Components
+- ✅ KeystoneButton - Full button component with all variants
 
-- React 18.0 or higher
-- The KDS stylesheet must be included in your project
+### In Progress
+- 🔄 Alert, Card, Form inputs, and more...
 
 ## Development
 
-This package is currently under active development. Components are being systematically implemented based on the official KDS Storybook.
+This package is being systematically built by extracting HTML patterns and component specifications from the official Pennsylvania Keystone Design System Storybook.
+
+## Contributing
+
+This is a community-driven effort to provide high-quality React implementations of Pennsylvania's design system. Contributions are welcome!
 
 ## License
 
@@ -58,6 +87,6 @@ MIT
 - [KDS Storybook](https://components.pa.gov/)
 - [KDS Documentation](https://components.pa.gov/?path=/docs/installation--documentation)
 
-## Contributing
+---
 
-Contributions are welcome! This package aims to be a high-quality, community-maintained implementation of KDS for React.
+*Built to support Pennsylvania digital services and improve citizen experiences through consistent, accessible design.*
