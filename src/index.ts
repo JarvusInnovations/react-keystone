@@ -32,6 +32,9 @@ export type { KeystoneAlertProps } from './components/Alert';
 export { KeystoneCard } from './components/Card';
 export type { KeystoneCardProps } from './components/Card';
 
+export { KeystoneCardContainer } from './components/CardContainer';
+export type { KeystoneCardContainerProps } from './components/CardContainer';
+
 // Navigation Components
 export { KeystoneLink } from './components/Link';
 export type { KeystoneLinkProps } from './components/Link';
