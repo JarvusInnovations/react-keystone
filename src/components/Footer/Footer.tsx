@@ -42,7 +42,7 @@ export interface KeystoneFooterProps {
    * Copyright text
    * @default 'Copyright © {year} Commonwealth of Pennsylvania. All rights reserved.'
    */
-  copyrightText?: string;
+  copyrightText?: React.ReactNode;
 
   /**
    * Copyright banner links (e.g., Accessibility, Privacy, etc.)
