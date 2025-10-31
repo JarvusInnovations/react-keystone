@@ -1,7 +1,7 @@
 # Checkbox
 
 **Component Name:** `checkbox`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -16,8 +16,7 @@
 
 ## Default
 
-**Story ID:** `components-checkbox--default`
-**Full Path:** Components/Checkbox
+**Story ID:** `story--components-checkbox--default--primary-inner`
 
 ```html
 <div class="kds-form-control">
@@ -28,14 +27,26 @@
 </div>
 ```
 
-**Classes:** `kds-form-control`
+---
+
+## Default
+
+**Story ID:** `story--components-checkbox--default-inner`
+
+```html
+<div class="kds-form-control">
+<label class="kds-label">
+<input type="checkbox" class="kds-checkbox" tabindex="0" aria-labelledby="text-input-label" aria-describedby="text-input-help-text">
+<span id="text-input-label" class="kds-label-text">Remember me</span>
+</label>
+</div>
+```
 
 ---
 
 ## Disabled
 
-**Story ID:** `components-checkbox--disabled`
-**Full Path:** Components/Checkbox
+**Story ID:** `story--components-checkbox--disabled-inner`
 
 ```html
 <div class="kds-form-control kds-disabled">
@@ -46,14 +57,11 @@
 </div>
 ```
 
-**Classes:** `kds-form-control kds-disabled`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-checkbox--warning`
-**Full Path:** Components/Checkbox
+**Story ID:** `story--components-checkbox--warning-inner`
 
 ```html
 <div class="kds-form-control">
@@ -69,14 +77,11 @@
 </div>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Error
 
-**Story ID:** `components-checkbox--error`
-**Full Path:** Components/Checkbox
+**Story ID:** `story--components-checkbox--error-inner`
 
 ```html
 <div class="kds-form-control">
@@ -91,6 +96,4 @@
 </div>
 </div>
 ```
-
-**Classes:** `kds-form-control`
 

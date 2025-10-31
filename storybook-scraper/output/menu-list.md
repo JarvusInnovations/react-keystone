@@ -1,14 +1,13 @@
 # Menu list
 
 **Component Name:** `menu-list`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ---
 
 ## Default
 
-**Story ID:** `components-menu-list--default`
-**Full Path:** Components/Menu list
+**Story ID:** `story--components-menu-list--default--primary-inner`
 
 ```html
 <ul class="kds-menu-list" role="menu" aria-label="Menu">
@@ -35,6 +34,4 @@ Menu Item 3
 </li>
 </ul>
 ```
-
-**Classes:** `kds-menu-list`
 

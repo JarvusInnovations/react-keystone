@@ -1,7 +1,7 @@
 # Button
 
 **Component Name:** `button`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -14,10 +14,9 @@
 
 ---
 
-## Filled
+## Default
 
-**Story ID:** `components-button--filled`
-**Full Path:** Components/Button
+**Story ID:** `story--components-button--filled--primary-inner`
 
 ```html
 <button type="button" class="kds-button kds-button-filled" tabindex="0">
@@ -25,14 +24,23 @@ Submit
 </button>
 ```
 
-**Classes:** `kds-button kds-button-filled`
+---
+
+## Filled
+
+**Story ID:** `story--components-button--filled-inner`
+
+```html
+<button type="button" class="kds-button kds-button-filled" tabindex="0">
+Submit
+</button>
+```
 
 ---
 
 ## Outlined
 
-**Story ID:** `components-button--outlined`
-**Full Path:** Components/Button
+**Story ID:** `story--components-button--outlined-inner`
 
 ```html
 <button type="button" class="kds-button kds-button-outlined" tabindex="0">
@@ -40,14 +48,11 @@ Submit
 </button>
 ```
 
-**Classes:** `kds-button kds-button-outlined`
-
 ---
 
 ## Text
 
-**Story ID:** `components-button--text`
-**Full Path:** Components/Button
+**Story ID:** `story--components-button--text-inner`
 
 ```html
 <button type="button" class="kds-button kds-button-text" tabindex="0">
@@ -55,14 +60,11 @@ Submit
 </button>
 ```
 
-**Classes:** `kds-button kds-button-text`
-
 ---
 
 ## Button With Icon
 
-**Story ID:** `components-button--button-with-icon`
-**Full Path:** Components/Button
+**Story ID:** `story--components-button--button-with-icon-inner`
 
 ```html
 <button type="button" class="kds-button kds-button-text" tabindex="0">
@@ -71,6 +73,4 @@ Submit
 </i>
 </button>
 ```
-
-**Classes:** `kds-button kds-button-text`
 

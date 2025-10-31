@@ -1,7 +1,7 @@
 # Tag
 
 **Component Name:** `tag`
-**Total Variants:** 5
+**Total Examples:** 6
 
 ## Component Props
 
@@ -11,10 +11,9 @@
 
 ---
 
-## Primary
+## Default
 
-**Story ID:** `components-tag--primary`
-**Full Path:** Components/Tag
+**Story ID:** `story--components-tag--primary--primary-inner`
 
 ```html
 <div class="kds-tag kds-tag-primary" data-controller="presentation">
@@ -26,14 +25,27 @@
 </div>
 ```
 
-**Classes:** `kds-tag kds-tag-primary`
+---
+
+## Primary
+
+**Story ID:** `story--components-tag--primary-inner`
+
+```html
+<div class="kds-tag kds-tag-primary" data-controller="presentation">
+<span>Label</span>
+<button class="kds-icon-button" data-action="click-&gt;presentation#dismiss">
+<i class="ri-close-line">
+</i>
+</button>
+</div>
+```
 
 ---
 
 ## Secondary
 
-**Story ID:** `components-tag--secondary`
-**Full Path:** Components/Tag
+**Story ID:** `story--components-tag--secondary-inner`
 
 ```html
 <div class="kds-tag kds-tag-secondary" data-controller="presentation">
@@ -45,14 +57,11 @@
 </div>
 ```
 
-**Classes:** `kds-tag kds-tag-secondary`
-
 ---
 
 ## Success
 
-**Story ID:** `components-tag--success`
-**Full Path:** Components/Tag
+**Story ID:** `story--components-tag--success-inner`
 
 ```html
 <div class="kds-tag kds-tag-success" data-controller="presentation">
@@ -64,14 +73,11 @@
 </div>
 ```
 
-**Classes:** `kds-tag kds-tag-success`
-
 ---
 
 ## Error
 
-**Story ID:** `components-tag--error`
-**Full Path:** Components/Tag
+**Story ID:** `story--components-tag--error-inner`
 
 ```html
 <div class="kds-tag kds-tag-error" data-controller="presentation">
@@ -83,14 +89,11 @@
 </div>
 ```
 
-**Classes:** `kds-tag kds-tag-error`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-tag--warning`
-**Full Path:** Components/Tag
+**Story ID:** `story--components-tag--warning-inner`
 
 ```html
 <div class="kds-tag kds-tag-warning" data-controller="presentation">
@@ -101,6 +104,4 @@
 </button>
 </div>
 ```
-
-**Classes:** `kds-tag kds-tag-warning`
 

@@ -1,7 +1,7 @@
 # Textarea
 
 **Component Name:** `textarea`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -15,8 +15,7 @@
 
 ## Default
 
-**Story ID:** `components-textarea--default`
-**Full Path:** Components/Textarea
+**Story ID:** `story--components-textarea--default--primary-inner`
 
 ```html
 <label class="kds-form-control" data-controller="textarea">
@@ -30,14 +29,29 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
+---
+
+## Default
+
+**Story ID:** `story--components-textarea--default-inner`
+
+```html
+<label class="kds-form-control" data-controller="textarea">
+<div class="kds-label">
+<span id="text-input-label" class="kds-label-text">Label</span>
+<span class="kds-label-text-alt" data-textarea-target="counter">
+</span>
+</div>
+<textarea class="kds-textarea" data-textarea-target="input" data-action="input-&gt;textarea#charCount" data-max="10" data-alert-class="kds-textarea-error" tabindex="0" aria-labelledby="text-input-label" aria-describedby="text-input-help-text">
+</textarea>
+</label>
+```
 
 ---
 
 ## Disabled
 
-**Story ID:** `components-textarea--disabled`
-**Full Path:** Components/Textarea
+**Story ID:** `story--components-textarea--disabled-inner`
 
 ```html
 <label class="kds-form-control" data-controller="textarea">
@@ -51,14 +65,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-textarea--warning`
-**Full Path:** Components/Textarea
+**Story ID:** `story--components-textarea--warning-inner`
 
 ```html
 <label class="kds-form-control" data-controller="textarea">
@@ -79,14 +90,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Error
 
-**Story ID:** `components-textarea--error`
-**Full Path:** Components/Textarea
+**Story ID:** `story--components-textarea--error-inner`
 
 ```html
 <label class="kds-form-control" data-controller="textarea">
@@ -106,6 +114,4 @@
 </div>
 </label>
 ```
-
-**Classes:** `kds-form-control`
 

@@ -1,7 +1,7 @@
 # Breadcrumb
 
 **Component Name:** `breadcrumb`
-**Total Variants:** 2
+**Total Examples:** 3
 
 ## Component Props
 
@@ -11,10 +11,9 @@
 
 ---
 
-## Desktop
+## Default
 
-**Story ID:** `components-breadcrumb--desktop`
-**Full Path:** Components/Breadcrumb
+**Story ID:** `story--components-breadcrumb--desktop--primary-inner`
 
 ```html
 <nav class="kds-breadcrumb" aria-label="Breadcrumb">
@@ -32,14 +31,33 @@
 </nav>
 ```
 
-**Classes:** `kds-breadcrumb`
+---
+
+## Desktop
+
+**Story ID:** `story--components-breadcrumb--desktop-inner`
+
+```html
+<nav class="kds-breadcrumb" aria-label="Breadcrumb">
+<ol>
+<li class="kds-breadcrumb-item">
+<a href="/">Home</a>
+</li>
+<li class="kds-breadcrumb-item">
+<a href="/products">Products</a>
+</li>
+<li class="kds-breadcrumb-item kds-breadcrumb-current">
+<span aria-current="page">Current Page</span>
+</li>
+</ol>
+</nav>
+```
 
 ---
 
 ## Mobile
 
-**Story ID:** `components-breadcrumb--mobile`
-**Full Path:** Components/Breadcrumb
+**Story ID:** `story--components-breadcrumb--mobile-inner`
 
 ```html
 <nav class="kds-breadcrumb" aria-label="Breadcrumb">
@@ -52,6 +70,4 @@
 </ol>
 </nav>
 ```
-
-**Classes:** `kds-breadcrumb`
 

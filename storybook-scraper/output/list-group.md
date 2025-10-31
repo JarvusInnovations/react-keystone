@@ -1,7 +1,7 @@
 # List group
 
 **Component Name:** `list-group`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ## Component Props
 
@@ -19,8 +19,7 @@
 
 ## Default
 
-**Story ID:** `components-list-group--default`
-**Full Path:** Components/List group
+**Story ID:** `story--components-list-group--default--primary-inner`
 
 ```html
 <div class="kds-list-group-container ">
@@ -93,6 +92,4 @@
 </ul>
 </div>
 ```
-
-**Classes:** `kds-list-group-container `
 

@@ -1,7 +1,7 @@
 # Alert
 
 **Component Name:** `alert`
-**Total Variants:** 6
+**Total Examples:** 7
 
 ## Component Props
 
@@ -13,10 +13,9 @@
 
 ---
 
-## Global Alert Info
+## Default
 
-**Story ID:** `components-alert--global-alert-info`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--global-alert-info--primary-inner`
 
 ```html
 <div class="kds-alert kds-alert-global kds-alert-global-info" role="alert" data-controller="presentation">
@@ -28,14 +27,27 @@
 </div>
 ```
 
-**Classes:** `kds-alert kds-alert-global kds-alert-global-info`
+---
+
+## Global Alert Info
+
+**Story ID:** `story--components-alert--global-alert-info-inner`
+
+```html
+<div class="kds-alert kds-alert-global kds-alert-global-info" role="alert" data-controller="presentation">
+<div class="kds-alert-content">
+<p class="kds-alert-global-title">Alert Title
+</p>
+<p class="kds-alert-global-message">A simple primary alert—check it out <a href="#">here</a>!</p>
+</div>
+</div>
+```
 
 ---
 
 ## Global Alert Warning
 
-**Story ID:** `components-alert--global-alert-warning`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--global-alert-warning-inner`
 
 ```html
 <div class="kds-alert kds-alert-global kds-alert-global-warning" role="alert" data-controller="presentation">
@@ -47,14 +59,11 @@
 </div>
 ```
 
-**Classes:** `kds-alert kds-alert-global kds-alert-global-warning`
-
 ---
 
 ## Global Alert Error
 
-**Story ID:** `components-alert--global-alert-error`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--global-alert-error-inner`
 
 ```html
 <div class="kds-alert kds-alert-global kds-alert-global-error" role="alert" data-controller="presentation">
@@ -66,14 +75,11 @@
 </div>
 ```
 
-**Classes:** `kds-alert kds-alert-global kds-alert-global-error`
-
 ---
 
 ## Local Alert Info
 
-**Story ID:** `components-alert--local-alert-info`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--local-alert-info-inner`
 
 ```html
 <div class="kds-alert kds-alert-local kds-alert-local-info" role="alert" data-controller="presentation">
@@ -91,14 +97,11 @@
 </div>
 ```
 
-**Classes:** `kds-alert kds-alert-local kds-alert-local-info`
-
 ---
 
 ## Local Alert Warning
 
-**Story ID:** `components-alert--local-alert-warning`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--local-alert-warning-inner`
 
 ```html
 <div class="kds-alert kds-alert-local kds-alert-local-warning" role="alert" data-controller="presentation">
@@ -116,14 +119,11 @@
 </div>
 ```
 
-**Classes:** `kds-alert kds-alert-local kds-alert-local-warning`
-
 ---
 
 ## Local Alert Error
 
-**Story ID:** `components-alert--local-alert-error`
-**Full Path:** Components/Alert
+**Story ID:** `story--components-alert--local-alert-error-inner`
 
 ```html
 <div class="kds-alert kds-alert-local kds-alert-local-error" role="alert" data-controller="presentation">
@@ -140,6 +140,4 @@
 </button>
 </div>
 ```
-
-**Classes:** `kds-alert kds-alert-local kds-alert-local-error`
 

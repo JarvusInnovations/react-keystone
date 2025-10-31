@@ -1,7 +1,7 @@
 # Icon object
 
 **Component Name:** `icon-object`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ## Component Props
 
@@ -13,8 +13,7 @@
 
 ## Default
 
-**Story ID:** `components-icon-object--default`
-**Full Path:** Components/Icon object
+**Story ID:** `story--components-icon-object--default--primary-inner`
 
 ```html
 <div class="kds-icon-object kds-icon-object-lg" aria-label="Hand with heart icon">
@@ -22,6 +21,4 @@
 </i>
 </div>
 ```
-
-**Classes:** `kds-icon-object kds-icon-object-lg`
 

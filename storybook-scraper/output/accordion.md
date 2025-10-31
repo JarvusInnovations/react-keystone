@@ -1,14 +1,13 @@
 # Accordion
 
 **Component Name:** `accordion`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ---
 
 ## Default
 
-**Story ID:** `components-accordion--default`
-**Full Path:** Components/Accordion
+**Story ID:** `story--components-accordion--default--primary-inner`
 
 ```html
 <div class="kds-accordion" id="accordionPanelsStayOpenExample">
@@ -61,6 +60,4 @@ away our atmosphere and make surface life impossible.
 </div>
 </div>
 ```
-
-**Classes:** `kds-accordion`
 

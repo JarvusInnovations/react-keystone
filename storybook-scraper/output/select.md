@@ -1,7 +1,7 @@
 # Select
 
 **Component Name:** `select`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -15,8 +15,7 @@
 
 ## Default
 
-**Story ID:** `components-select--default`
-**Full Path:** Components/Select
+**Story ID:** `story--components-select--default--primary-inner`
 
 ```html
 <label class="kds-form-control">
@@ -35,14 +34,34 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
+---
+
+## Default
+
+**Story ID:** `story--components-select--default-inner`
+
+```html
+<label class="kds-form-control">
+<div class="kds-label">
+<span id="text-input-label" class="kds-label-text">Pick the best fantasy franchise</span>
+</div>
+<select class="kds-select" tabindex="0" aria-labelledby="text-input-label" aria-describedby="text-input-help-text">
+<option disabled="" selected="">
+</option>
+<option value="1">Star Wars</option>
+<option value="2">Harry Potter</option>
+<option value="3">Lord of the Rings</option>
+<option value="4">Planet of the Apes</option>
+<option value="5">Star Trek</option>
+</select>
+</label>
+```
 
 ---
 
 ## Disabled
 
-**Story ID:** `components-select--disabled`
-**Full Path:** Components/Select
+**Story ID:** `story--components-select--disabled-inner`
 
 ```html
 <label class="kds-form-control">
@@ -61,14 +80,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-select--warning`
-**Full Path:** Components/Select
+**Story ID:** `story--components-select--warning-inner`
 
 ```html
 <label class="kds-form-control">
@@ -94,14 +110,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Error
 
-**Story ID:** `components-select--error`
-**Full Path:** Components/Select
+**Story ID:** `story--components-select--error-inner`
 
 ```html
 <label class="kds-form-control">
@@ -126,6 +139,4 @@
 </div>
 </label>
 ```
-
-**Classes:** `kds-form-control`
 

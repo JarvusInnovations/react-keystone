@@ -1,7 +1,7 @@
 # Link
 
 **Component Name:** `link`
-**Total Variants:** 2
+**Total Examples:** 3
 
 ## Component Props
 
@@ -13,10 +13,9 @@
 
 ---
 
-## Inline
+## Default
 
-**Story ID:** `components-link--inline`
-**Full Path:** Components/Link
+**Story ID:** `story--components-link--inline--primary-inner`
 
 ```html
 <a href="#" class="kds-link kds-link-inline kds-link-md" role="link" aria-label="Link">
@@ -24,14 +23,23 @@ Link
 </a>
 ```
 
-**Classes:** `kds-link kds-link-inline kds-link-md`
+---
+
+## Inline
+
+**Story ID:** `story--components-link--inline-inner`
+
+```html
+<a href="#" class="kds-link kds-link-inline kds-link-md" role="link" aria-label="Link">
+Link
+</a>
+```
 
 ---
 
 ## Standalone
 
-**Story ID:** `components-link--standalone`
-**Full Path:** Components/Link
+**Story ID:** `story--components-link--standalone-inner`
 
 ```html
 <a href="#" class="kds-link kds-link-standalone kds-link-md" role="link" aria-label="Link">
@@ -40,6 +48,4 @@ Link
 </i>
 </a>
 ```
-
-**Classes:** `kds-link kds-link-standalone kds-link-md`
 

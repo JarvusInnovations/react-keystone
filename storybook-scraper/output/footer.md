@@ -1,7 +1,7 @@
 # Footer
 
 **Component Name:** `footer`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ## Component Props
 
@@ -14,8 +14,7 @@
 
 ## Default
 
-**Story ID:** `components-footer--default`
-**Full Path:** Components/Footer
+**Story ID:** `story--components-footer--default--primary-inner`
 
 ```html
 <footer class="kds-footer">
@@ -82,6 +81,4 @@ reserved.</p>
 </div>
 </footer>
 ```
-
-**Classes:** `kds-footer`
 

@@ -1,7 +1,7 @@
 # Text input
 
 **Component Name:** `text-input`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -15,8 +15,7 @@
 
 ## Default
 
-**Story ID:** `components-text-input--default`
-**Full Path:** Components/Text input
+**Story ID:** `story--components-text-input--default--primary-inner`
 
 ```html
 <label class="kds-form-control">
@@ -27,14 +26,26 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
+---
+
+## Default
+
+**Story ID:** `story--components-text-input--default-inner`
+
+```html
+<label class="kds-form-control">
+<div class="kds-label kds-label-md">
+<span id="text-input-label" class="kds-label-text">Label</span>
+</div>
+<input type="text" class="kds-text-input" tabindex="0" aria-labelledby="text-input-label" aria-describedby="text-input-help-text">
+</label>
+```
 
 ---
 
 ## Disabled
 
-**Story ID:** `components-text-input--disabled`
-**Full Path:** Components/Text input
+**Story ID:** `story--components-text-input--disabled-inner`
 
 ```html
 <label class="kds-form-control">
@@ -45,14 +56,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-text-input--warning`
-**Full Path:** Components/Text input
+**Story ID:** `story--components-text-input--warning-inner`
 
 ```html
 <label class="kds-form-control">
@@ -70,14 +78,11 @@
 </label>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Error
 
-**Story ID:** `components-text-input--error`
-**Full Path:** Components/Text input
+**Story ID:** `story--components-text-input--error-inner`
 
 ```html
 <label class="kds-form-control">
@@ -94,6 +99,4 @@
 </div>
 </label>
 ```
-
-**Classes:** `kds-form-control`
 

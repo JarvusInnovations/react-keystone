@@ -1,7 +1,7 @@
 # Radio
 
 **Component Name:** `radio`
-**Total Variants:** 4
+**Total Examples:** 5
 
 ## Component Props
 
@@ -16,8 +16,7 @@
 
 ## Default
 
-**Story ID:** `components-radio--default`
-**Full Path:** Components/Radio
+**Story ID:** `story--components-radio--default--primary-inner`
 
 ```html
 <div class="kds-form-control">
@@ -28,14 +27,26 @@
 </div>
 ```
 
-**Classes:** `kds-form-control`
+---
+
+## Default
+
+**Story ID:** `story--components-radio--default-inner`
+
+```html
+<div class="kds-form-control">
+<label class="kds-label">
+<input type="radio" class="kds-radio" tabindex="0" aria-labelledby="text-input-label" aria-describedby="text-input-help-text">
+<span id="text-input-label" class="kds-label-text">Some choice</span>
+</label>
+</div>
+```
 
 ---
 
 ## Disabled
 
-**Story ID:** `components-radio--disabled`
-**Full Path:** Components/Radio
+**Story ID:** `story--components-radio--disabled-inner`
 
 ```html
 <div class="kds-form-control">
@@ -46,14 +57,11 @@
 </div>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Warning
 
-**Story ID:** `components-radio--warning`
-**Full Path:** Components/Radio
+**Story ID:** `story--components-radio--warning-inner`
 
 ```html
 <div class="kds-form-control">
@@ -69,14 +77,11 @@
 </div>
 ```
 
-**Classes:** `kds-form-control`
-
 ---
 
 ## Error
 
-**Story ID:** `components-radio--error`
-**Full Path:** Components/Radio
+**Story ID:** `story--components-radio--error-inner`
 
 ```html
 <div class="kds-form-control">
@@ -91,6 +96,4 @@
 </div>
 </div>
 ```
-
-**Classes:** `kds-form-control`
 

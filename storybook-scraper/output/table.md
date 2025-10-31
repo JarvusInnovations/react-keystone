@@ -1,7 +1,7 @@
 # Table
 
 **Component Name:** `table`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ## Component Props
 
@@ -18,12 +18,39 @@
 
 ## Default
 
-**Story ID:** `components-table--default`
-**Full Path:** Components/Table
+**Story ID:** `story--components-table--default--primary-inner`
 
 ```html
 <h2 class="kds-table-title">Financial Performance</h2>
+<table class="kds-table">
+<thead>
+<tr>
+<th>Quarter</th>
+<th>Revenue</th>
+<th>Expenses</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Q1 2024</th>
+<td>$100,000</td>
+<td>$80,000</td>
+<td>$20,000</td>
+</tr>
+<tr>
+<th scope="row">Q2 2024</th>
+<td>$120,000</td>
+<td>$85,000</td>
+<td>$35,000</td>
+</tr>
+<tr>
+<th scope="row">Q3 2024</th>
+<td>$150,000</td>
+<td>$95,000</td>
+<td>$55,000</td>
+</tr>
+</tbody>
+</table>
 ```
-
-**Classes:** `kds-table-title`
 

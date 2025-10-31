@@ -1,14 +1,13 @@
 # Search input
 
 **Component Name:** `search-input`
-**Total Variants:** 1
+**Total Examples:** 1
 
 ---
 
 ## Default
 
-**Story ID:** `components-search-input--default`
-**Full Path:** Components/Search input
+**Story ID:** `story--components-search-input--default--primary-inner`
 
 ```html
 <div class="kds-search-input">
@@ -21,6 +20,4 @@
 </button>
 </div>
 ```
-
-**Classes:** `kds-search-input`
 
