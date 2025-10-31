@@ -152,51 +152,69 @@ class KDSScraper {
     }
   }
 
-  async extractComponentHTML(storyId) {
+  async extractComponentStories(componentName) {
     const page = await this.browser.newPage();
 
     try {
-      const url = `${this.baseUrl}/iframe.html?id=${storyId}&viewMode=story`;
+      // Visit the documentation page instead of individual story pages
+      const docsUrl = `${this.baseUrl}/?path=/docs/components-${componentName}--documentation`;
 
-      await page.goto(url, {
+      await page.goto(docsUrl, {
         waitUntil: 'networkidle2',
         timeout: 30000
       });
 
-      // Wait a moment for any animations/rendering
-      await new Promise(resolve => setTimeout(resolve, 500));
+      // Wait for iframe to load
+      await page.waitForSelector('#storybook-preview-iframe', { timeout: 10000 });
 
-      const result = await page.evaluate(() => {
-        const root = document.querySelector('#storybook-root, #root');
-        if (!root) return { error: 'No root element found' };
+      const stories = await page.evaluate(() => {
+        const iframe = document.querySelector('#storybook-preview-iframe');
+        if (!iframe) return [];
 
-        // Try to find KDS components
-        const kdsElements = root.querySelectorAll('[class*="kds-"]');
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-        if (kdsElements.length === 0) {
-          // No KDS classes found, return full root content
-          return {
-            html: root.innerHTML.trim(),
-            warning: 'No KDS-specific classes found'
-          };
+          // Find all .sb-story containers
+          const storyContainers = iframeDoc.querySelectorAll('.sb-story');
+
+          return Array.from(storyContainers).map((container, index) => {
+            // Look for the element with data-name attribute (contains both title and HTML)
+            const dataNameElement = container.querySelector('[data-name]');
+
+            if (dataNameElement) {
+              // Get title from data-name attribute
+              let title = dataNameElement.getAttribute('data-name') || '';
+
+              // Override first story to "Default" for consistency
+              if (index === 0 && title) {
+                title = 'Default';
+              }
+
+              return {
+                title: title.trim(),
+                html: dataNameElement.innerHTML.trim(),
+                id: dataNameElement.id || null
+              };
+            }
+
+            // Fallback if no data-name element found
+            return {
+              title: index === 0 ? 'Default' : `Variant ${index + 1}`,
+              html: container.innerHTML.trim(),
+              id: null
+            };
+          });
+        } catch (e) {
+          return [];
         }
-
-        // Get the first KDS component (usually the main one)
-        const mainComponent = kdsElements[0];
-
-        return {
-          html: mainComponent.outerHTML.trim(),
-          classes: mainComponent.className,
-          tagName: mainComponent.tagName.toLowerCase()
-        };
       });
 
       await page.close();
-      return result;
+      return stories;
 
     } catch (error) {
       await page.close();
-      return { error: error.message };
+      return [];
     }
   }
 
@@ -211,11 +229,11 @@ class KDSScraper {
   }
 
   generateComponentMarkdown(componentName, componentData) {
-    const { title, variants, props } = componentData;
+    const { title, stories, props } = componentData;
 
     let markdown = `# ${title}\n\n`;
     markdown += `**Component Name:** \`${componentName}\`\n`;
-    markdown += `**Total Variants:** ${variants.length}\n\n`;
+    markdown += `**Total Examples:** ${stories ? stories.length : 0}\n\n`;
 
     // Add component props table if available
     if (props && props.length > 0) {
@@ -238,27 +256,22 @@ class KDSScraper {
 
     markdown += `---\n\n`;
 
-    // Add each variant as a subsection
-    variants.forEach((variant, index) => {
-      if (index > 0) markdown += `---\n\n`;
+    // Add each story example as a subsection
+    if (stories && stories.length > 0) {
+      stories.forEach((story, index) => {
+        if (index > 0) markdown += `---\n\n`;
 
-      markdown += `## ${variant.name}\n\n`;
-      markdown += `**Story ID:** \`${variant.id}\`\n`;
-      markdown += `**Full Path:** ${variant.storyTitle}\n\n`;
+        markdown += `## ${story.title}\n\n`;
 
-      if (variant.html) {
-        if (variant.warning) {
-          markdown += `> ⚠️ ${variant.warning}\n\n`;
+        if (story.id) {
+          markdown += `**Story ID:** \`${story.id}\`\n\n`;
         }
-        markdown += `\`\`\`html\n${variant.html}\n\`\`\`\n\n`;
 
-        if (variant.classes) {
-          markdown += `**Classes:** \`${variant.classes}\`\n\n`;
-        }
-      } else if (variant.error) {
-        markdown += `> ❌ **Error:** ${variant.error}\n\n`;
-      }
-    });
+        markdown += `\`\`\`html\n${story.html}\n\`\`\`\n\n`;
+      });
+    } else {
+      markdown += `> ⚠️ No examples found\n\n`;
+    }
 
     return markdown;
   }
@@ -282,27 +295,23 @@ class KDSScraper {
         console.log(` ⚠️  No props found`);
       }
 
-      // Small delay before extracting variants
-      await new Promise(resolve => setTimeout(resolve, 200));
+      // Small delay before extracting stories
+      await new Promise(resolve => setTimeout(resolve, 500));
 
-      // Extract HTML for each variant
-      for (const variant of componentData.variants) {
-        process.stdout.write(`  ⏳ ${variant.name}...`);
+      // Extract all stories from the documentation page
+      process.stdout.write(`  📖 Extracting stories from documentation page...`);
+      const stories = await this.extractComponentStories(componentName);
 
-        const result = await this.extractComponentHTML(variant.id);
-
-        if (result.error) {
-          console.log(` ❌ Error: ${result.error}`);
-          variant.error = result.error;
-        } else {
-          console.log(` ✓`);
-          variant.html = this.formatHTML(result.html);
-          variant.classes = result.classes;
-          variant.warning = result.warning;
-        }
-
-        // Small delay between requests to be polite
-        await new Promise(resolve => setTimeout(resolve, 200));
+      if (stories.length > 0) {
+        console.log(` ✓ Found ${stories.length} story example(s)`);
+        // Format the HTML for each story
+        componentData.stories = stories.map(story => ({
+          ...story,
+          html: this.formatHTML(story.html)
+        }));
+      } else {
+        console.log(` ⚠️  No stories found`);
+        componentData.stories = [];
       }
 
       // Generate markdown file
