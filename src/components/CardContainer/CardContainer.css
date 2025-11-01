@@ -1,0 +1,39 @@
+/* Clickable CardContainer States */
+.kds-card-container-clickable {
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.kds-card-container-clickable:hover {
+  border-color: var(--kds-color-primary, #0066cc);
+  background-color: rgba(0, 102, 204, 0.03);
+}
+
+.kds-card-container-clickable:focus-visible {
+  outline: 2px solid var(--kds-color-primary, #0066cc);
+  outline-offset: 2px;
+}
+
+/* Selected CardContainer State */
+.kds-card-container-selected {
+  border-color: var(--kds-color-primary, #0066cc);
+  border-width: 2px;
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+/* Border Accent for CardContainer */
+.kds-card-container-accent-primary {
+  border-left: 4px solid var(--kds-color-primary, #0066cc);
+}
+
+.kds-card-container-accent-success {
+  border-left: 4px solid var(--kds-color-success, #28a745);
+}
+
+.kds-card-container-accent-warning {
+  border-left: 4px solid var(--kds-color-warning, #ffc107);
+}
+
+.kds-card-container-accent-error {
+  border-left: 4px solid var(--kds-color-error, #dc3545);
+}

@@ -1,0 +1,4 @@
+/* Non-removable Tag (hide close button) */
+.kds-tag-non-removable .kds-icon-button {
+  display: none;
+}

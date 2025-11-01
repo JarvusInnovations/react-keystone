@@ -16,8 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --external react --external react-dom",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external react --external react-dom",
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react --external react-dom --inject-style",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external react --external react-dom --inject-style",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
