@@ -1,6 +1,6 @@
 {
   "name": "react-keystone",
-  "version": "0.1.0",
+  "version": "2.0.1",
   "description": "React components for the Pennsylvania Keystone Design System",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
