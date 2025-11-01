@@ -95,7 +95,7 @@ export const KeystoneAlert = ({
       {type === 'local' && getIcon()}
       <div className="kds-alert-content">
         {title && <p className={titleClassName}>{title}</p>}
-        <p className={messageClassName}>{children}</p>
+        <div className={messageClassName}>{children}</div>
       </div>
       {type === 'local' && closeable && (
         <button
