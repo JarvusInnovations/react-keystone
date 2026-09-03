@@ -70,7 +70,7 @@ npm install react-keystone
 ## Prerequisites
 
 - React 18.0 or higher
-- Pennsylvania Keystone Design System v2.0.1 or compatible
+- Pennsylvania Keystone Design System v2.0.2 (v2.0.1 still supported)
 
 ## Setup
 
@@ -88,13 +88,13 @@ Follow the [official KDS installation guide](https://components.pa.gov/?path=/do
 
 **Quick Summary:**
 
-1. **Download the KDS distribution package** from the official site (current version: 2.0.1)
+1. **Download the KDS distribution package** from the official site (current version: 2.0.2)
 2. **Extract and place the `dist/` folder** in your project's `public/` directory:
 
    ```
    public/
    └── kds/
-       └── 2.0.1/
+       └── 2.0.2/
            ├── main.min.css
            ├── main.min.js
            ├── main.LICENSE.txt
@@ -106,7 +106,7 @@ Follow the [official KDS installation guide](https://components.pa.gov/?path=/do
 3. **Link the CSS in your HTML** (e.g., `index.html`):
 
    ```html
-   <link rel="stylesheet" href="/kds/2.0.1/main.min.css" />
+   <link rel="stylesheet" href="/kds/2.0.2/main.min.css" />
    ```
 
 ### Step 3: Include the KDS Fonts
@@ -161,7 +161,7 @@ In your `index.html`:
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/kds/2.0.1/main.min.css" />
+    <link rel="stylesheet" href="/kds/2.0.2/main.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
@@ -192,7 +192,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="/kds/2.0.1/main.min.css" />
+        <link rel="stylesheet" href="/kds/2.0.2/main.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />

@@ -90,6 +90,10 @@ export const KeystoneNavbar = ({
 
   const navbarClasses = ['kds-navbar', className].filter(Boolean).join(' ');
 
+  // The mobile Menu toggle only opens the item list (and the search form on
+  // small screens); with nothing to show it would be a button that does nothing.
+  const hasMenu = items.length > 0 || showSearch;
+
   const searchForm = showSearch && (
     <form method="get" onSubmit={handleSearchSubmit}>
       <div className="kds-search-input p-3">
@@ -114,13 +118,15 @@ export const KeystoneNavbar = ({
       <div className="kds-navbar-header">
         {brand}
         {showSearch && <div className="d-none d-md-block">{searchForm}</div>}
-        <button
-          className="kds-navbar-toggler"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-        >
-          Menu
-        </button>
+        {hasMenu && (
+          <button
+            className="kds-navbar-toggler"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+          >
+            Menu
+          </button>
+        )}
       </div>
       <ul className={`kds-nav${isOpen ? '' : ' d-none d-md-flex'}`}>
         {showSearch && <li className="kds-nav-item d-md-none">{searchForm}</li>}
