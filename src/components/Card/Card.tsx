@@ -1,4 +1,5 @@
 import React from 'react';
+import { tagClasses, type KeystoneTagVariant } from '../Tag/tagClasses';
 import './Card.css';
 
 export interface KeystoneCardProps {
@@ -41,7 +42,7 @@ export interface KeystoneCardProps {
   /**
    * Tag color variant
    */
-  tagVariant?: 'primary' | 'secondary' | 'success' | 'error' | 'warning';
+  tagVariant?: KeystoneTagVariant;
 
   /**
    * Optional date text for header
@@ -169,7 +170,7 @@ export const KeystoneCard = ({
         {hasHeader && (
           <div className="kds-card-header">
             {tag && (
-              <span className={`kds-tag kds-tag-${tagVariant}`}>{tag}</span>
+              <span className={tagClasses(tagVariant)}>{tag}</span>
             )}
             {date && (
               <span className="kds-label kds-label-md kds-text-normal">{date}</span>

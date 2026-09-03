@@ -1,12 +1,15 @@
 import React from 'react';
 import './Tag.css';
+import { tagClasses, type KeystoneTagVariant } from './tagClasses';
 
 export interface KeystoneTagProps {
   /**
-   * Tag color variant
+   * Tag color variant. Accepts the KDS 2.0.2 color names (`blue`, `gray`,
+   * `green`, `red`, `yellow`) and their KDS 2.0.1 semantic equivalents
+   * (`primary`, `secondary`, `success`, `error`, `warning`).
    * @default 'primary'
    */
-  variant?: 'primary' | 'secondary' | 'success' | 'error' | 'warning';
+  variant?: KeystoneTagVariant;
 
   /**
    * Tag content
@@ -35,8 +38,8 @@ export interface KeystoneTagProps {
  *
  * @example
  * ```tsx
- * <KeystoneTag variant="primary">Label</KeystoneTag>
- * <KeystoneTag variant="success" dismissible onDismiss={() => console.log('dismissed')}>
+ * <KeystoneTag variant="blue">Label</KeystoneTag>
+ * <KeystoneTag variant="green" dismissible onDismiss={() => console.log('dismissed')}>
  *   Success
  * </KeystoneTag>
  * ```
@@ -48,17 +51,10 @@ export const KeystoneTag = ({
   onDismiss,
   className = ''
 }: KeystoneTagProps) => {
-  // Build tag classes following KDS pattern
-  const tagClasses = [
-    'kds-tag',
-    `kds-tag-${variant}`,
-    className
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const classes = [tagClasses(variant), className].filter(Boolean).join(' ');
 
   return (
-    <div className={tagClasses}>
+    <div className={classes}>
       <span>{children}</span>
       {dismissible && (
         <button className="kds-icon-button" onClick={onDismiss}>
