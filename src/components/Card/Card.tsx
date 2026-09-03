@@ -162,7 +162,7 @@ export const KeystoneCard = ({
 
       <div className="kds-card-body">
         {icon && (
-          <div className={`kds-icon-object kds-icon-object-${iconSize}`} aria-label={`${icon} icon`}>
+          <div className={`kds-icon-object kds-icon-object-${iconSize}`} aria-hidden="true">
             <i className={icon} />
           </div>
         )}
